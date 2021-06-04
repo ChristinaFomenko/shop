@@ -6,6 +6,19 @@ from django.contrib.contenttypes.fields import GenericForeignKey
 User = get_user_model()
 
 
+class LatestProductsManager:
+
+    def get_products_for_main_page(self, *args, **kwargs):
+        products =[]
+        ct_models = ContentType(model__in=args)
+        for ct_model in ct_models:
+            model_products = ct_model.model_class().
+
+
+class LatestProducts:
+
+    objects = None
+
 # 1 Category
 # 2 Product
 # 3 CartProduct
@@ -101,5 +114,4 @@ class Customer(models.Model):
 
     def __str__(self):
         return "Покупатель: {} {}".format(self.user.first_name, self.user.last_name)
-
 
