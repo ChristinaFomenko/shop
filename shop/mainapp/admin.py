@@ -1,3 +1,4 @@
+from django.core.exceptions import ValidationError
 from django.forms import ModelChoiceField, ModelForm
 from django.contrib import admin
 
@@ -18,7 +19,9 @@ class NotebookAdminForm(ModelForm):
     def clean_image(self):
         image = self.cleaned_data['image']
         img = Image.open(image)
-        print(img.width, img.height)
+        min_height, min_width = self.MIN_RESOLUTION
+        if img.height < min_height or img.width < min_width:
+            raise ValidationError('Загруженное изображение меньше минимального разрешения')
         return image
 
 
