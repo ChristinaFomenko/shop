@@ -1,10 +1,3 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
 <table class="table">
     <tbody>
     <tr>
@@ -13,25 +6,35 @@
     </tr>
         <tr>
         <td>Диагональ</td>
-        <td>{{ product.display_type }}</td>
+        <td>{{ product.display }}</td>
     </tr>
         <tr>
-        <td>Частота процессора</td>
-        <td>{{ product.processor_freq }}</td>
+        <td>Разрешение экрана</td>
+        <td>{{ product.resolution }}</td>
     </tr>
         <tr>
         <td>Оперативная память</td>
         <td>{{ product.ram }}</td>
     </tr>
         <tr>
-        <td>Видеокарта</td>
-        <td>{{ product.video }}</td>
+        <td>Заряд аккумулятора</td>
+        <td>{{ product.accum_volume }}</td>
     </tr>
         <tr>
-        <td>Время работы от аккумулятора</td>
-        <td>{{ product.time_without_charge }}</td>
+        <td>Наличие слота для SD карты</td>
+        <td>{{ product.sd }}</td>
+    </tr>
+            <tr>
+        <td>Максимальный объем SD карты</td>
+        <td>{{ product.sd_volume_max }}</td>
+    </tr>
+            <tr>
+        <td>Камера (МП)</td>
+        <td>{{ product.main_cam_mp }}</td>
+    </tr>
+    <tr>
+        <td>Фронтальная камера(МП)</td>
+        <td>{{ product.frontal_cam_mp }}</td>
     </tr>
     </tbody>
 </table>
-</body>
-</html>
